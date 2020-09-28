@@ -1,0 +1,24 @@
+
+entity Product {
+	code String required,
+    name String required,
+    price Double required
+}
+
+entity Customer {
+	code String required,
+    firstName String required,
+    lastName String required
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Order {
+	code String required
+}
+
+relationship OneToMany {
+	Customer{Order} to Order{Customer}
+}
+
+service all with serviceClass
